@@ -180,3 +180,6 @@ vnoremap <Leader>p "0p
 
 " Remap deleting to blackhole register
 noremap <Leader>d "_d
+
+" Wrap lines and break words properly (disables the nowrap above)
+set wrap linebreak nolist
