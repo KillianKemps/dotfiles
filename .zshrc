@@ -49,6 +49,9 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 
 #export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
+# Export PATH for Ruby
+PATH=$PATH:/home/killian/.gem/ruby/2.3.0/bin
+export PATH
 
 # Stop the CTRL+S/CTRL+Q feature
 stty -ixoff
