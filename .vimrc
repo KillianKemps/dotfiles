@@ -30,6 +30,8 @@ Plugin 'tpope/vim-surround'
 Plugin 'mattn/emmet-vim'
 " Plugin for WakaTime Dashboard
 Bundle 'wakatime/vim-wakatime'
+Plugin 'posva/vim-vue'
+Plugin 'isRuslan/vim-es6'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
