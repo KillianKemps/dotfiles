@@ -63,6 +63,13 @@ export PATH
 # Export Neovim as default editor
 export EDITOR=/usr/bin/nvim
 
+# Export for Impala ODBC
+export LD_LIBRARY_PATH="$LD_LIBRARY_PATH:/usr/lib/x86_64-linux-gnu:/usr/lib/x86_64-linux-gnu/odbc"
+export ODBCINI="/etc/odbc.ini"
+export ODBCSYSINI="/etc"
+export CLOUDERAIMPALAINI="/opt/cloudera/impalaodbc/lib/64/cloudera.impalaodbc.ini"
+export LD_PRELOAD="/usr/lib/libodbcinst.so"
+
 # Stop the CTRL+S/CTRL+Q feature
 stty -ixoff
 stty stop undef
