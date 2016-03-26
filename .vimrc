@@ -125,6 +125,8 @@ set guifont=DejaVu\ Sans\ Mono\ 10
 
 if !has('nvim')
   set antialias
+  "" For Tmux
+  "set term=screen-256color
 endif
 
 " Vim ultisnips snippets configuration
