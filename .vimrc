@@ -120,7 +120,10 @@ let &t_Co=256
 colorscheme hybrid
 
 set guifont=DejaVu\ Sans\ Mono\ 10
-set antialias
+
+if !has('nvim')
+  set antialias
+endif
 
 " Vim ultisnips snippets configuration
 "let g:UltiSnipsExpandTrigger="<tab>"
