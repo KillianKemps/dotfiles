@@ -53,6 +53,12 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 PATH=$PATH:/home/killian/.gem/ruby/2.3.0/bin
 export PATH
 
+# Export colors for neovim
+#export TERM=xterm-256color
+
+# Export Neovim as default editor
+export EDITOR=/usr/bin/nvim
+
 # Stop the CTRL+S/CTRL+Q feature
 stty -ixoff
 stty stop undef
