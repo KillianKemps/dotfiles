@@ -168,7 +168,8 @@ vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
 
 " Remap Tab and Shift+Tab to allow shifting text in normal mode
-nnoremap <Tab> >>_
+" Disable Tab because of conflict with Ctrl+I
+"nnoremap <Tab> >>_
 nnoremap <S-Tab> <<_
 
 " Remap Shift+tab to allow inverse shifting in insert mode
