@@ -1,0 +1,29 @@
+[alias]
+  amend = commit  --amend -C HEAD
+  br = branch --list
+  bra = branch --list -a
+  branches = branch --list -a
+  ci = commit
+  co = checkout
+  fi = commit --fixup
+  tags = tag --list
+  rfi = rebase -i --autosquash
+  glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+  rollback = reset --soft HEAD^
+  update = checkout
+  st = status --short
+  trash = reset --hard
+  purge =  clean -fd
+  wip = commit -am 'WIP'
+
+[core]
+  editor = vim
+[push]
+  default = simple
+
+[rebase]
+  autosquash = true
+
+[user]
+	email = killian.kemps@etu-webschoolfactory.fr
+	name = Killian Kemps
