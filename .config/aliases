@@ -1,0 +1,24 @@
+alias ls='ls --color=auto'
+alias ll='ls -al --color=auto'
+alias grep='grep --color=always --exclude-dir=\*.svn\*'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias nose='nosetests -sxv'
+
+alias git-clean='git pull --rebase && git pull --prune && git branch --merged | grep -v "\*" | xargs -n 1 git branch -d'
+alias pyc-clean='find . -name "*.pyc" -exec rm -rf {} \;'
+
+alias fig='docker-compose'
+alias fig='/usr/bin/docker-compose'
+alias docker-kill-all='docker kill $(docker ps -q)'
+alias docker-purge='docker rm $(docker ps -a -q)'
+alias docker-purge-i='docker rmi $(docker images -q -f dangling=true)'
+alias docker-purge-all='docker rmi $(docker images -q)'
+alias docker-clean="docker-kill-all || true && docker-purge"
+alias activate-virtualbox="sudo modprobe vboxdrv && sudo modprobe vboxnetadp && sudo modprobe vboxnetflt"
+
+alias vim='nvim'
+
+alias weather='curl wttr.in/'
+
+alias gq-deploy="ssh 3429028@git.dc0.gpaas.net 'deploy default.git'"
