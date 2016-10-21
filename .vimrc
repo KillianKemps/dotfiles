@@ -121,6 +121,7 @@ filetype indent on
 
 " Set Theme for Vim
 let &t_Co=256
+set background=dark
 colorscheme hybrid
 
 set guifont=DejaVu\ Sans\ Mono\ 10
