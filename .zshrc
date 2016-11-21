@@ -74,3 +74,7 @@ export EDITOR=/usr/bin/nvim
 stty -ixoff
 stty stop undef
 stty start undef
+
+
+# home made
+source ~/.profile
