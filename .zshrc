@@ -75,6 +75,8 @@ stty -ixoff
 stty stop undef
 stty start undef
 
-
 # home made
 source ~/.profile
+
+# Export path for Ansible hosts
+export ANSIBLE_INVENTORY=~/ansible_hosts
