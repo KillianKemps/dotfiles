@@ -23,7 +23,7 @@ bindkey ';5C' emacs-backward-word
 bindkey ';5C' emacs-forward-word
 bindkey '^R' history-incremental-search-backward
 
-zstyle :compinstall filename '/home/killian/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 
 source ~/.config/git-prompt.zsh
 
@@ -40,12 +40,12 @@ zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
 . ~/.config/aliases
 . ~/.config/vars
 
-# Export PATH for Stata software
-PATH=$PATH:/home/killian/Logiciels/Stata14Linux64
+# Export PATH for Ruby
+PATH=$PATH:$HOME/.gem/ruby/2.4.0/bin
 export PATH
 
-# Export PATH for Ruby
-PATH=$PATH:/home/killian/.gem/ruby/2.3.0/bin
+# Export PATH for Chef
+PATH=$PATH:$HOME/.chefdk/gem/ruby/2.4.0/bin
 export PATH
 
 # Export colors for neovim
@@ -62,5 +62,13 @@ stty start undef
 # home made
 source ~/.profile
 
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+
+# Export path for rust cargo binaries
+export PATH="$HOME/.cargo/bin:$PATH"
+
 # Export path for Ansible hosts
 export ANSIBLE_INVENTORY=~/ansible_hosts
+
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
