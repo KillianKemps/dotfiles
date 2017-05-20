@@ -47,3 +47,26 @@ set hidden
 
 set wildmenu                        " Enhanced command line completion.
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.xpm,*.pyc,*.pyo
+
+set encoding=utf-8                  " Allow extended digraphs
+syntax enable                       " Enable syntax color
+
+" Redefinition of map leader
+let mapleader = "\<Space>"
+
+" Remap pasting from 0 register
+noremap <Leader>p "0p
+noremap <Leader>P "0P
+vnoremap <Leader>p "0p
+
+" Remap split navigation
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
+
+" Remap Shift+tab to allow inverse shifting in insert mode
+inoremap <S-Tab> <C-D>
+
+" Remap incrementation for compatibility with Tmux config
+nnoremap <C-s> <C-a>
