@@ -15,11 +15,12 @@
   trash = reset --hard
   purge =  clean -fd
   wip = commit -am 'WIP'
+  mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
 
 [core]
   editor = vim
 [push]
-  default = simple
+  default = current
 
 [rebase]
   autosquash = true
