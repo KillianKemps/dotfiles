@@ -32,6 +32,7 @@ Plugin 'mattn/emmet-vim'
 Bundle 'wakatime/vim-wakatime'
 Plugin 'posva/vim-vue'
 Plugin 'isRuslan/vim-es6'
+Plugin 'evidens/vim-twig'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
