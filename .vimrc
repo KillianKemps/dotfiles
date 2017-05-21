@@ -10,6 +10,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Hybrid theme
 Plug 'w0ng/vim-hybrid'
 
+" Plugin for NerdTree sidebar with lazy loading on use
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
 " Plugin for WakaTime Dashboard
 Plug 'wakatime/vim-wakatime'
 
@@ -112,3 +115,8 @@ inoremap <S-Tab> <C-D>
 
 " Remap incrementation for compatibility with Tmux config
 nnoremap <C-s> <C-a>
+
+" -- Plugins configuration
+
+" [,t ] Toggle NERDTree
+map <leader>t :NERDTreeToggle<CR>
