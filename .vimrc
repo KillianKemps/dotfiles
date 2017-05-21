@@ -10,6 +10,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 " Hybrid theme
 Plug 'w0ng/vim-hybrid'
 
+" Plugin for WakaTime Dashboard
+Plug 'wakatime/vim-wakatime'
+
 " Initialize plugin system
 call plug#end()
 
