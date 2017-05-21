@@ -2,6 +2,17 @@
 
 set nocompatible              " be iMproved, required
 
+" -- Plugins
+
+" Specify a directory for plugins (for Vim: ~/.vim/plugged)
+call plug#begin('~/.local/share/nvim/plugged')
+
+" Hybrid theme
+Plug 'w0ng/vim-hybrid'
+
+" Initialize plugin system
+call plug#end()
+
 " -- Display
 set title                 " Update title of window or terminal
 set number                " Display number of lines
@@ -10,6 +21,18 @@ set mouse=a               " Set mouse
 set nowrap                " Do not wrap lines
 
 set scrolloff=3           " Displays a minimum of 3 lines around the cursor
+
+" Enable Vim theme
+let &t_Co=256
+set background=dark
+colorscheme hybrid
+
+" Neovim specific
+if !has('nvim')
+  set antialias
+  " For Tmux
+  set term=screen-256color
+endif
 
 " Convert tabs to spaces
 set expandtab

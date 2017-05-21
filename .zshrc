@@ -54,6 +54,9 @@ export PATH
 # Export Neovim as default editor
 export EDITOR=/usr/bin/nvim
 
+# Enable Neovim True Colors
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
+
 # Stop the CTRL+S/CTRL+Q feature
 stty -ixoff
 stty stop undef
