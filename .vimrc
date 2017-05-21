@@ -74,6 +74,22 @@ set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.xp
 set encoding=utf-8                  " Allow extended digraphs
 syntax enable                       " Enable syntax color
 
+set nobackup                        " Don't make a backup before overwriting a file.
+set nowritebackup                   " And again.
+set noswapfile                      " Use an SCM instead of swap files
+set undolevels=1000                 " use many levels of undo
+
+set completeopt=menuone,menu,longest,preview " use a popup for completion
+
+" Open new splits to the right
+set splitright
+
+" Active les comportements specifiques aux types de fichiers comme
+" la syntaxe et l’indentation
+filetype on
+filetype plugin on
+filetype indent on
+
 " Redefinition of map leader
 let mapleader = "\<Space>"
 
