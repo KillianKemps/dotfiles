@@ -109,6 +109,12 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+"
+" Remap shifting text shortcuts to keep visual selection
+vnoremap > >gv
+vnoremap < <gv
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
 
 " Remap Shift+tab to allow inverse shifting in insert mode
 inoremap <S-Tab> <C-D>
