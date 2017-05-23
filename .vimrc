@@ -19,6 +19,9 @@ Plug 'wakatime/vim-wakatime'
 " Plugin to edit surrounding characters easier
 Plug 'tpope/vim-surround'
 
+" Plugin for Javascript syntax highlighting
+Plug 'pangloss/vim-javascript', { 'for':  'javascript' }
+
 " Initialize plugin system
 call plug#end()
 
