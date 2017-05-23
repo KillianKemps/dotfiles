@@ -16,6 +16,9 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 " Plugin for WakaTime Dashboard
 Plug 'wakatime/vim-wakatime'
 
+" Plugin to edit surrounding characters easier
+Plug 'tpope/vim-surround'
+
 " Initialize plugin system
 call plug#end()
 
