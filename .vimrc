@@ -13,6 +13,9 @@ Plug 'w0ng/vim-hybrid'
 " Plugin for NerdTree sidebar with lazy loading on use
 Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 
+" Plugin for NerdCommenter to comment lines easily
+Plug 'scrooloose/nerdcommenter'
+
 " Plugin for WakaTime Dashboard
 Plug 'wakatime/vim-wakatime'
 
