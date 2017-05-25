@@ -25,6 +25,9 @@ Plug 'tpope/vim-surround'
 " Plugin for Javascript syntax highlighting
 Plug 'pangloss/vim-javascript', { 'for':  'javascript' }
 
+" Plugin for general syntax checking. Enabled only for Python
+Plug 'scrooloose/syntastic', { 'for':  'python' }
+
 " Initialize plugin system
 call plug#end()
 
@@ -135,3 +138,14 @@ nnoremap <C-s> <C-a>
 
 " [,t ] Toggle NERDTree
 map <leader>t :NERDTreeToggle<CR>
+
+" Syntastic configuration
+let g:syntastic_python_checkers = ['flake8']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
