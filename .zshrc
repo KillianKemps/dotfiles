@@ -75,3 +75,4 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export ANSIBLE_INVENTORY=~/ansible_hosts
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export GOPATH="$HOME/Developpement/go" # Add Gopath for Go language

@@ -28,6 +28,9 @@ Plug 'pangloss/vim-javascript', { 'for':  'javascript' }
 " Plugin for general syntax checking. Enabled only for Python
 Plug 'neomake/neomake', { 'for':  'python' }
 
+" Plugin for Go syntax hightlighting and other features
+Plug 'fatih/vim-go', { 'for': 'go', 'tag': 'v1.13' }
+
 " Initialize plugin system
 call plug#end()
 
