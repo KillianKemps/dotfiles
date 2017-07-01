@@ -25,6 +25,9 @@ Plug 'tpope/vim-surround'
 " Plugin for Javascript syntax highlighting
 Plug 'pangloss/vim-javascript', { 'for':  'javascript' }
 
+" Plugin for Vue.js syntax hightlighting
+Plug 'posva/vim-vue', { 'for': 'vue' }
+
 " Plugin for general syntax checking. Enabled only for Python
 Plug 'neomake/neomake', { 'for':  'python' }
 
