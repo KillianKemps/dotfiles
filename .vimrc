@@ -34,6 +34,9 @@ Plug 'neomake/neomake', { 'for':  'python' }
 " Plugin for Go syntax hightlighting and other features
 Plug 'fatih/vim-go', { 'for': 'go', 'tag': 'v1.13' }
 
+" Plugin for Crystal syntax hightlighting and other features
+Plug 'rhysd/vim-crystal', { 'for': ['crystal', 'eruby'] }
+
 " Initialize plugin system
 call plug#end()
 
