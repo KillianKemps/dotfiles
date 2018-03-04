@@ -1,56 +1,65 @@
 " VIM Configuration - Killian Kemps
 
 set nocompatible              " be iMproved, required
-filetype off                  " required
 
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" -- Plugins
 
-" let Vundle manage Vundle, required
-Plugin 'VundleVim/Vundle.vim'
+" Specify a directory for plugins (for Vim: ~/.vim/plugged)
+call plug#begin('~/.local/share/nvim/plugged')
 
-Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'scrooloose/syntastic'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'pangloss/vim-javascript'
-Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'scrooloose/nerdtree'
-Plugin 'JarrodCTaylor/vim-256-color-schemes'
-Plugin 'w0ng/vim-hybrid'
-Plugin 'qpkorr/vim-bufkill'
-Plugin 'xolox/vim-session'
-Plugin 'xolox/vim-misc'
-Plugin 'tpope/vim-fugitive'
-Plugin 'Glench/Vim-Jinja2-Syntax'
-Plugin 'rust-lang/rust.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'mattn/emmet-vim'
+" Hybrid theme
+Plug 'w0ng/vim-hybrid'
+
+" Plugin for NerdTree sidebar with lazy loading on use
+Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
+
+" Plugin for NerdCommenter to comment lines easily
+Plug 'scrooloose/nerdcommenter'
+
 " Plugin for WakaTime Dashboard
-Bundle 'wakatime/vim-wakatime'
-Plugin 'posva/vim-vue'
-Plugin 'isRuslan/vim-es6'
-Plugin 'evidens/vim-twig'
+Plug 'wakatime/vim-wakatime'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" Plugin to edit surrounding characters easier
+Plug 'tpope/vim-surround'
 
-" -- Affichage
-set title                 " Met a jour le titre de votre fenetre ou de
-                          " votre terminal
-set number                " Affiche le numero des lignes
-set ruler                 " Affiche la position actuelle du curseur
+" Plugin for Javascript syntax highlighting
+Plug 'pangloss/vim-javascript', { 'for':  'javascript' }
+
+" Plugin for Vue.js syntax hightlighting
+Plug 'posva/vim-vue', { 'for': 'vue' }
+
+" Plugin for general syntax checking. Enabled only for Python
+Plug 'neomake/neomake', { 'for':  'python' }
+
+" Plugin for Go syntax hightlighting and other features
+Plug 'fatih/vim-go', { 'for': 'go', 'tag': 'v1.13' }
+
+" Plugin for Crystal syntax hightlighting and other features
+Plug 'rhysd/vim-crystal', { 'for': ['crystal', 'eruby'] }
+
+" Initialize plugin system
+call plug#end()
+
+" -- Display
+set title                 " Update title of window or terminal
+set number                " Display number of lines
+set ruler                 " Display current position of cursor
 set mouse=a               " Set mouse
-set nowrap
+set nowrap                " Do not wrap lines
 
-set scrolloff=3           " Affiche un minimum de 3 lignes autour du curseur
-                          " (pour le scroll)
+set scrolloff=3           " Displays a minimum of 3 lines around the cursor
 
-set relativenumber        " Set relative numbering around cursor instead of
-                          " absolute
+" Enable Vim theme
+let &t_Co=256
+set background=dark
+colorscheme hybrid
+
+" Neovim specific
+if !has('nvim')
+  set antialias
+  " For Tmux
+  set term=screen-256color
+endif
 
 " Convert tabs to spaces
 set expandtab
@@ -59,24 +68,16 @@ set expandtab
 autocmd FileType * set tabstop=2|set shiftwidth=2
 autocmd FileType python set tabstop=4|set shiftwidth=4
 
-" Convenient mapping to switch tab/indent settings
-nmap <leader>2 :set tabstop=2<cr>:set shiftwidth=2<cr>:set softtabstop=2<cr>
-nmap <leader>4 :set tabstop=4<cr>:set shiftwidth=4<cr>:set softtabstop=4<cr>
-
-" highlight tabs and trailing spaces
+" Highlight tabs and trailing spaces
 set list listchars=tab:→\ ,trail:·
 
 " Change background of column 81
 set colorcolumn=81
 
-set statusline=%F%m%=%r%h%w%{fugitive#statusline()}\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [ASCII=\%03.3b]\ [LINE=%l]\ [Col=%v]\ [%p%%]
-set laststatus=2                    " Show the status line all the time
+" Add automatically a newline at end of file
+set eol
 
-" Airline configuration for smarter tab line
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_theme='badwolf'
-
-" -- Recherche
+" -- Search
 set ignorecase            " Ignore la casse lors d'une recherche
 set smartcase             " Si une recherche contient une majuscule,
                           " re-active la sensibilite a la casse
@@ -97,12 +98,8 @@ set hidden
 set wildmenu                        " Enhanced command line completion.
 set wildignore=.svn,CVS,.git,.hg,*.o,*.a,*.class,*.mo,*.la,*.so,*.obj,*.swp,*.xpm,*.pyc,*.pyo
 
-" Add automatically a newline at end of file
-set eol
-
-set encoding=utf-8                  " allow extended digraphs
-" Active la coloration syntaxique
-syntax enable
+set encoding=utf-8                  " Allow extended digraphs
+syntax enable                       " Enable syntax color
 
 set nobackup                        " Don't make a backup before overwriting a file.
 set nowritebackup                   " And again.
@@ -120,61 +117,25 @@ filetype on
 filetype plugin on
 filetype indent on
 
-" Set Theme for Vim
-let &t_Co=256
-set background=dark
-colorscheme hybrid
-
-set guifont=DejaVu\ Sans\ Mono\ 10
-
-if !has('nvim')
-  set antialias
-  "" For Tmux
-  "set term=screen-256color
-endif
-
-" Vim ultisnips snippets configuration
-"let g:UltiSnipsExpandTrigger="<tab>"
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-
-" Remap UltiSnips because of a conflict with a remapping below
-let g:UltiSnipsExpandTrigger = '<f5>'
-
-" Use Eslint as Javascript checker
-let g:syntastic_javascript_checkers = ['eslint']
-
 " Redefinition of map leader
-"let mapleader = ","
 let mapleader = "\<Space>"
 
-" Allow to use ;; as Escape key alternative
-":imap ;; <Esc>
-":map ;; <Esc>
-
-" [,t ] Toggle NERDTree
-map <leader>t :NERDTreeToggle<CR>
-
-" Map Ctrl+P to open CtrlP fuzzy finder
-let g:ctrlp_map = '<c-p>'
-let g:ctrlp_cmd = 'CtrlP'
+" Remap pasting from 0 register
+noremap <Leader>p "0p
+noremap <Leader>P "0P
+vnoremap <Leader>p "0p
 
 " Remap split navigation
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-
+"
 " Remap shifting text shortcuts to keep visual selection
 vnoremap > >gv
 vnoremap < <gv
 vnoremap <Tab> >gv
 vnoremap <S-Tab> <gv
-
-" Remap Tab and Shift+Tab to allow shifting text in normal mode
-" Disable Tab because of conflict with Ctrl+I
-"nnoremap <Tab> >>_
-nnoremap <S-Tab> <<_
 
 " Remap Shift+tab to allow inverse shifting in insert mode
 inoremap <S-Tab> <C-D>
@@ -182,16 +143,10 @@ inoremap <S-Tab> <C-D>
 " Remap incrementation for compatibility with Tmux config
 nnoremap <C-s> <C-a>
 
-" Check PEP8 every time a Python file is written
-" disabled: autocmd BufWritePost *.py call Flake8()
+" -- Plugins configuration
 
-" Remap pasting from 0 register
-noremap <Leader>p "0p
-noremap <Leader>P "0P
-vnoremap <Leader>p "0p
+" [,t ] Toggle NERDTree
+map <leader>t :NERDTreeToggle<CR>
 
-" Remap deleting to blackhole register
-noremap <Leader>d "_d
-
-" Wrap lines and break words properly (disables the nowrap above)
-set wrap linebreak nolist
+" Configure NeoMake to run at write on Python files
+autocmd! BufWritePost *.py Neomake
