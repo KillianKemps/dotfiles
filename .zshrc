@@ -3,25 +3,26 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-bindkey -v
-
-bindkey '\e[1~' beginning-of-line
-bindkey '\e[3~' delete-char
-bindkey '\e[4~' end-of-line
-bindkey '\177' backward-delete-char
-bindkey '\e[2~' overwrite-mode
-
-bindkey "\e[7~" beginning-of-line
-bindkey "\e[H" beginning-of-line
-#bindkey "\e[2~" transpose-words
-bindkey "\e[8~" end-of-line
-bindkey "\e[F" end-of-line
-bindkey "\eOH" beginning-of-line
-bindkey "\eOF" end-of-line
-
-bindkey ';5C' emacs-backward-word
-bindkey ';5C' emacs-forward-word
-bindkey '^R' history-incremental-search-backward
+# Disable key bindings
+#bindkey -v
+#
+#bindkey '\e[1~' beginning-of-line
+#bindkey '\e[3~' delete-char
+#bindkey '\e[4~' end-of-line
+#bindkey '\177' backward-delete-char
+#bindkey '\e[2~' overwrite-mode
+#
+#bindkey "\e[7~" beginning-of-line
+#bindkey "\e[H" beginning-of-line
+##bindkey "\e[2~" transpose-words
+#bindkey "\e[8~" end-of-line
+#bindkey "\e[F" end-of-line
+#bindkey "\eOH" beginning-of-line
+#bindkey "\eOF" end-of-line
+#
+#bindkey ';5C' emacs-backward-word
+#bindkey ';5C' emacs-forward-word
+#bindkey '^R' history-incremental-search-backward
 
 zstyle :compinstall filename '$HOME/.zshrc'
 
