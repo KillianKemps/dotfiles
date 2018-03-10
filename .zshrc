@@ -77,3 +77,8 @@ export ANSIBLE_INVENTORY=~/ansible_hosts
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export GOPATH="$HOME/Developpement/go" # Add Gopath for Go language
+
+# Enable VTE for Tilix
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+        source /etc/profile.d/vte.sh
+fi
