@@ -17,7 +17,7 @@ Plug 'scrooloose/nerdtree', { 'on':  'NERDTreeToggle' }
 Plug 'scrooloose/nerdcommenter'
 
 " Plugin for WakaTime Dashboard
-Plug 'wakatime/vim-wakatime'
+"Plug 'wakatime/vim-wakatime'
 
 " Plugin to edit surrounding characters easier
 Plug 'tpope/vim-surround'
@@ -27,6 +27,10 @@ Plug 'pangloss/vim-javascript', { 'for':  'javascript' }
 
 " Plugin for general syntax checking. Enabled only for Python
 Plug 'neomake/neomake', { 'for':  'python' }
+
+" Plugin for fuzzy finder
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 
 " Initialize plugin system
 call plug#end()
@@ -138,6 +142,9 @@ nnoremap <C-s> <C-a>
 
 " [,t ] Toggle NERDTree
 map <leader>t :NERDTreeToggle<CR>
+
+" Change directory location with NerdTree
+let g:NERDTreeChDirMode=2
 
 " Configure NeoMake to run at write on Python files
 autocmd! BufWritePost *.py Neomake
