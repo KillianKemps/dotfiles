@@ -8,11 +8,14 @@ source ~/.config/git-prompt.sh
 
 autoload -U colors && colors
 
-#PS1='%B%{$fg[green]%}%n%{$reset_color%}:%B%{$fg[blue]%}%~%{$reset_color%} $(git_prompt_string) %% '
-#PS1='%B%{$fg[green]%}%n%{$reset_color%}:%B%{$fg[blue]%}%2~%{$reset_color%} $(git_prompt_string) %% '
+# Define prompt with git
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
+GIT_PS1_SHOWUPSTREAM="auto"
+GIT_PS1_SHOWCOLORHINTS=true
+precmd () { __git_ps1 "%F{blue}%2~%f" " %F{blue}$%f " " %s" }
 
-precmd () { __git_ps1 "%F{green}%n%f" ":%F{blue}%~ $ %f " "|%s" }
-
+# Git autompletion
 autoload -Uz compinit
 compinit
 zstyle ':completion:*' menu select=5
