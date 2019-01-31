@@ -1,37 +1,17 @@
-# Lines configured by zsh-newuser-install                                                                                                                                                                      [0/83]
 HISTFILE=~/.histfile
 HISTSIZE=30000
 SAVEHIST=30000
 
-# DIsable key bindings
-#bindkey -v
-#
-#bindkey '\e[1~' beginning-of-line
-#bindkey '\e[3~' delete-char
-#bindkey '\e[4~' end-of-line
-#bindkey '\177' backward-delete-char
-#bindkey '\e[2~' overwrite-mode
-#
-#bindkey "\e[7~" beginning-of-line
-#bindkey "\e[H" beginning-of-line
-##bindkey "\e[2~" transpose-words
-#bindkey "\e[8~" end-of-line
-#bindkey "\e[F" end-of-line
-#bindkey "\eOH" beginning-of-line
-#bindkey "\eOF" end-of-line
-#
-#bindkey ';5C' emacs-backward-word
-#bindkey ';5C' emacs-forward-word
-#bindkey '^R' history-incremental-search-backward
-
 zstyle :compinstall filename '$HOME/.zshrc'
 
-source ~/.config/git-prompt.zsh
+source ~/.config/git-prompt.sh
 
 autoload -U colors && colors
 
 #PS1='%B%{$fg[green]%}%n%{$reset_color%}:%B%{$fg[blue]%}%~%{$reset_color%} $(git_prompt_string) %% '
-PS1='%B%{$fg[green]%}%n%{$reset_color%}:%B%{$fg[blue]%}%2~%{$reset_color%} $(git_prompt_string) %% '
+#PS1='%B%{$fg[green]%}%n%{$reset_color%}:%B%{$fg[blue]%}%2~%{$reset_color%} $(git_prompt_string) %% '
+
+precmd () { __git_ps1 "%F{green}%n%f" ":%F{blue}%~ $ %f " "|%s" }
 
 autoload -Uz compinit
 compinit
@@ -88,13 +68,6 @@ if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
   source /etc/profile.d/vte.sh
 fi
 
-# Find SSH agent and reuse it
-. ~/.ssh-find-agent/ssh-find-agent.sh
-ssh-find-agent -a
-if [ -z "$SSH_AUTH_SOCK" ]
-then
-   eval $(ssh-agent) > /dev/null
-   ssh-add -l >/dev/null || alias ssh='ssh-add -l >/dev/null || ssh-add && unalias ssh; ssh'
-fi
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+# Enable shortcuts for fzf
+[ -f ~/.config/fzf/key-bindings.zsh ] && source ~/.config/fzf/key-bindings.zsh
+[ -f ~/.config/fzf/completion.zsh ] && source ~/.config/fzf/completion.zsh
