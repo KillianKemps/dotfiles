@@ -39,6 +39,9 @@ Plug 'rhysd/vim-crystal', { 'for': ['crystal', 'eruby'] }
 
 " Plugin for Elixir syntax highlithing
 Plug 'elixir-editors/vim-elixir', { 'for': 'elixir' }
+"
+" Plugin for Rust syntax highlithing
+Plug 'rust-lang/rust.vim', { 'for': 'rust' }
 
 " Initialize plugin system
 call plug#end()
