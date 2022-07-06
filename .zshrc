@@ -3,27 +3,6 @@ HISTFILE=~/.histfile
 HISTSIZE=1000
 SAVEHIST=1000
 
-# Disable key bindings
-#bindkey -v
-#
-#bindkey '\e[1~' beginning-of-line
-#bindkey '\e[3~' delete-char
-#bindkey '\e[4~' end-of-line
-#bindkey '\177' backward-delete-char
-#bindkey '\e[2~' overwrite-mode
-#
-#bindkey "\e[7~" beginning-of-line
-#bindkey "\e[H" beginning-of-line
-##bindkey "\e[2~" transpose-words
-#bindkey "\e[8~" end-of-line
-#bindkey "\e[F" end-of-line
-#bindkey "\eOH" beginning-of-line
-#bindkey "\eOF" end-of-line
-#
-#bindkey ';5C' emacs-backward-word
-#bindkey ';5C' emacs-forward-word
-#bindkey '^R' history-incremental-search-backward
-
 zstyle :compinstall filename '$HOME/.zshrc'
 
 source ~/.config/git-prompt.zsh
@@ -82,3 +61,7 @@ export GOPATH="$HOME/Developpement/go" # Add Gopath for Go language
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
+
+# Enable shortcuts for fzf
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
