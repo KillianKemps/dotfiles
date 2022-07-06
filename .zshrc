@@ -82,3 +82,7 @@ export GOPATH="$HOME/Developpement/go" # Add Gopath for Go language
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
         source /etc/profile.d/vte.sh
 fi
+
+# Enable shortcuts for fzf
+[ -f /usr/share/doc/fzf/examples/key-bindings.zsh ] && source /usr/share/doc/fzf/examples/key-bindings.zsh
+[ -f /usr/share/doc/fzf/examples/completion.zsh ] && source /usr/share/doc/fzf/examples/completion.zsh
